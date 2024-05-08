@@ -18,7 +18,7 @@ const CreatePrompt = () => {
     setIsSubmitting(true);
 
     try {
-      const response = await fetch("/api/prompt/new", {
+      const response = await fetch(`${process.env.NEXTAUTH_URL}/api/prompt/new`, {
         method: "POST",
         body: JSON.stringify({
           prompt: post.prompt,

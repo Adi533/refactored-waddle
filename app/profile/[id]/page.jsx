@@ -13,7 +13,7 @@ const UserProfile = ({ params }) => {
 
   useEffect(() => {
     const fetchPosts = async () => {
-      const response = await fetch(`/api/users/${params?.id}/posts`);
+      const response = await fetch(`${process.env.NEXTAUTH_URL}/api/users/${params?.id}/posts`);
       const data = await response.json();
 
       setUserPosts(data);
